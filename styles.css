@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+/* Define elements and separate classes to be applied in the main html site*/
+/* FORMAT: 
+element.class {
+	attribute: parameter
+}
+*/
+p {
+	color: #339F19;
+	text-align: center;
+}
+
+p.monospace {
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+
+body {
+	background-color: #272727;
+	font-size: 75px
+}
