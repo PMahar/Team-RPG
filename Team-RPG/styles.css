@@ -67,3 +67,11 @@ a.select {
 a.home {
 	font-size: 38px;
 }
+
+.button {
+	position: absolute;
+	background-color: #339f19ff;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-size: 57px;
+	color: #272727;
+}
