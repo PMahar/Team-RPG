@@ -6,16 +6,64 @@ element.class {
 	attribute: parameter
 }
 */
+body.title {
+	display: flex;
+	background-color: #272727;
+	background-image: url("../images/1hall.PNG");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	width: 1vw;
+	height: 1vh;
+}
+
+body.game {
+	display: flex;
+	background-color: #272727;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+
+
 p {
 	color: #339F19;
 	text-align: center;
 }
 
-p.monospace {
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+p.prompt {
+	justify-content: center;
+	width: 99vw;
+	height: 1vh;
+	font-size: 54px;
 }
 
-body {
-	background-color: #272727;
-	font-size: 75px
+p.title {
+	justify-content: center;
+	width: 99vw;
+	height: 1vh;
+	text-decoration: underline;
+	font-size: 142px
+}
+
+a {
+	color: #0097a7;
+	text-decoration: underline;
+
+}
+a.start {
+	justify-content: center;
+	font-size: 68px;
+	position: absolute;
+	bottom: 3em;
+	left: 3em;
+}
+
+a.select {
+	font-size: 68px;
+	position: absolute;
+	bottom: 3em;
+	right: 2em;
+}
+
+a.home {
+	font-size: 38px;
 }
