@@ -23,6 +23,11 @@ body.game {
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
+form.code {
+	text-align: center;
+	
+}
+	
 
 p {
 	color: #339F19;
@@ -77,3 +82,4 @@ a.home {
 	font-size: 57px;
 	color: #272727;
 }
+
