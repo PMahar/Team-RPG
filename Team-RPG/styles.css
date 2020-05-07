@@ -12,7 +12,7 @@ body.title {
 	background-image: url("../images/1hall.PNG");
 	background-size: cover;
 	background-repeat: no-repeat;
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-family: "Courier", "Courier New", "Consolas", "Lucida Sans Typewriter", "Monaco", "monospace";
 	width: 1vw;
 	height: 1vh;
 }
@@ -41,7 +41,8 @@ p.title {
 	width: 99vw;
 	height: 1vh;
 	text-decoration: underline;
-	font-size: 142px
+	font-size: 142px;
+	font-weight: bold;
 }
 
 a {
