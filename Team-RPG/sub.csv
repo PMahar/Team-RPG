@@ -5,3 +5,9 @@ BEEP
 You awake from your standard 4 hours of sleep and see the tip of the sun peeking above the horizon illuminating your room and scorching your optic nerves. You woke up pretty late and you know the big yellow vehicle that takes you to school will be arriving soon but you are hungry.
 What will you do? 
 ",A.jpg,B,Risk missing the big yellow vehicle and eat breakfast then run to the bus stop,C,Skip breakfast and run to the Big yellow vehicle stop
+B,"You fry an egg at maximum heat, almost burning it to a crisp. You scarf that egg down. As you step out of the house then remember you forgot your phone’s power pack and coat.",,D,Just leave the power pack and coat at home and try to catch the bus,E,Grab the power pack and coat then try to catch the bus
+E,"You grab your power pack and coat then run to the bus stop at full speed. As the bus stop becomes visible you witness the big yellow vehicle leaving the stop. Panting, sweaty, and out of breath you turn around and walk home so you can pester your mother for a ride. She drives you to school.
+
+",,F,,,
+D,You leave your power pack and coat at home because you decide it is the only way you can catch the bus. You run to the bus stop at full speed. As the bus stop becomes visible you witness the bus just about to arrive at the stop. You make it just in time,,F,,,
+C,It’s time to skip breakfast to catch the big yellow vehicle to go to school. Just your average morning.,,F,,,
