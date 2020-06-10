@@ -38,7 +38,7 @@ p.prompt {
 	justify-content: center;
 	width: 99vw;
 	height: 1vh;
-	font-size: 32px;
+	font-size: 80px;
 }
 
 p.title {
@@ -50,6 +50,12 @@ p.title {
 	font-weight: bold;
 }
 
+p.textfield {
+	justify-content: center;
+	width: 99vw;
+	height: 1vh;
+}
+	
 a {
 	color: #0097a7;
 	text-decoration: underline;
@@ -73,6 +79,14 @@ a.select {
 
 a.home {
 	font-size: 38px;
+}
+
+a.levelcode {
+	justify-content: center;
+	font-size: 38px;
+	position: absolute;
+	left: 18em;
+	
 }
 
 .button {
