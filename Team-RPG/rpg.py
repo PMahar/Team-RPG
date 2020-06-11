@@ -16,17 +16,19 @@ def parse():
 
 		with open(workingSheet) as csv_sheet:
 			read_csv = csv.reader(csv_sheet, delimiter=',')
-
 			for y in read_csv:
 				if rowCount != 0:
 					fileGen = open(y[0] + ".html", 'w')
 					for x in open(workingHTML, 'r'):
+						#Begin counters for button goto and label later on
+						i = 3
+						l = 4
 						if '<!--IMAGE HERE-->' in x:
 							x = x.replace('<!--IMAGE HERE-->', y[2])
 
 						if '<!--PROMPT HERE-->' in x:
 							x = x.replace('<!--PROMPT HERE-->', y[1])
-						# pretend button
+
 						if '<!--BUTTONS HERE-->' in x:
 
 						# But wait....
@@ -44,21 +46,27 @@ def parse():
 						# so n=3, n+=2 each loop, while n < array length
 
 						# Start with y[3] for the ID and y[4] for the label, increment both by 2
-							i = 3
-							l = 4
-                      
-                           				#Start
 
-							x = x.replace('<!--BUTTONS HERE-->', button)
+							#<!--BUTTONS HERE--> is an obvious starting point for buttons, but buttons must be
+							#generated after for every column with information
+							x = x.replace('<!--BUTTONS HERE-->', '	' + button)
 							x = x.replace('<!--BUTTON GOTO-->', y[i] + '.html')
-							x = x.replace('<!--BUTTON LABEL-->', y[l])
 							# ... label is y[4]
-
+							x = x.replace('<!--BUTTON LABEL-->', y[l])
 							# as you loop, keep working in this 'x'. Each subsequent loop, APPEND the variable button and
 							# resubstitute.
-							i += 2
-							l += 2
-
+							#If there's anything in the columns past the image ID, they are button IDs and text
+							#If len(y) > 4, make a new button
+							
+							if len(y[l]) > 0:
+								print("i:" + str(i))
+								print("l:" + str(l))
+								print((len(y[i])))
+								x += "\n" + "	" + button
+								x = x.replace('<!--BUTTON GOTO-->', y[i] + '.html')
+								x = x.replace('<!--BUTTON LABEL-->', y[l])
+								i += 2
+								l += 2
 						fileGen.write(x)
 				rowCount += 1
 	else:
