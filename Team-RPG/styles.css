@@ -38,7 +38,7 @@ p.prompt {
 	justify-content: center;
 	width: 99vw;
 	height: 1vh;
-	font-size: 80px;
+	font-size: 125px;
 }
 
 p.title {
@@ -50,10 +50,13 @@ p.title {
 	font-weight: bold;
 }
 
-p.textfield {
-	justify-content: center;
-	width: 99vw;
-	height: 1vh;
+input.textfield {
+	width: 20vw;
+	height: 15vh;
+	position: absolute;
+	bottom: 8em;
+	left: 25em;
+	text-align: center;
 }
 	
 a {
@@ -97,3 +100,14 @@ a.levelcode {
 	color: #272727;
 }
 
+button.gobutton {
+	width: 20vw;
+	height: 16vh;
+	position: absolute;
+	bottom: 8em;
+	left: 52em;
+	text-align: center;
+	background-color: #0097a7;
+	color: black;
+	border: none;
+}
