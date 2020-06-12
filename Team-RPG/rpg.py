@@ -29,6 +29,15 @@ def parse():
                         if '<!--PROMPT HERE-->' in x:
                             x = x.replace('<!--PROMPT HERE-->', y[1])
 
+                        if '<!--PROMPT SIZE HERE-->' in x:
+                            if len(y[1]) > 0 and len(y[1]) < 150:
+                                subSize = "40"
+                            elif len(y[1]) > 150 and len(y[1]) < 250:
+                                subSize = "30"
+                            elif len(y[1]) > 250 and len(y[1]) < 350:
+                                subSize = "25"
+                            x = x.replace('<!--PROMPT SIZE HERE-->', subSize + 'px')
+
                         if '<!--BUTTONS HERE-->' in x:
                             print(len(y))
                             while l < len(y) and len(y[i]) > 0 and len(y[l]) > 0:
