@@ -1,11 +1,11 @@
-import array
 import csv
-# from tkinter import filedialog
+import os.path
 from sys import exit
 
 
 def parse():
     button = '<button style="left: <!--L JUST-->; top: <!--T JUST-->" class="button" onclick="window.location=\'<!--BUTTON GOTO-->\'"><!--BUTTON LABEL--></button>'
+    image = 'style = \"background-image: url(<!--FILENAME-->); background-size: cover\"'
 
     workingSheet = "sub.csv"
     print('READ SHEET:' + workingSheet)
@@ -17,16 +17,25 @@ def parse():
         with open(workingSheet) as csv_sheet:
             read_csv = csv.reader(csv_sheet, delimiter=',')
             for y in read_csv:
+                print(y[2])
                 horizJ = 2
-                vertJ = 1
+                vertJ = 5
                 if rowCount != 0:
                     fileGen = open(y[0] + ".html", 'w')
                     for x in open(workingHTML, 'r'):
                         # Begin counters for button goto, label, and position later on
                         i = 3
                         l = 4
+
+                        #If an image with the corresponding image ID in its name exists, substitute it.
+                        #Otherwise, let the document fall back to default CSS settings.
+                        imagepath = "../images/" + y[2]
                         if '<!--IMAGE HERE-->' in x:
-                            x = x.replace('<!--IMAGE HERE-->', y[2])
+                            if os.path.isfile(imagepath):
+                                x = x.replace('<!--IMAGE HERE-->', image)
+                                x = x.replace('<!--FILENAME-->', imagepath)
+                            else:
+                                x = x.replace('<!--IMAGE HERE-->', '')
 
                         if '<!--PROMPT HERE-->' in x:
                             x = x.replace('<!--PROMPT HERE-->', y[1])
@@ -63,6 +72,7 @@ def parse():
                                 #else:
                                 #    lJust = '5em'
                                 #    horizJ += 1
+                                #    vertJ += 2
 
                                 #Or, ya know, screw it because automatically centering buttons is difficult
                                 vertJ += 4
