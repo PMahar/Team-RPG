@@ -5,7 +5,7 @@ from sys import exit
 
 
 def parse():
-    button = '<button style="left: \'<!--L JUST-->\'; top: \'<!--T JUST-->\'" class="button" onclick="window.location=\'<!--BUTTON GOTO-->\'"><!--BUTTON LABEL--></button>'
+    button = '<button style="left: <!--L JUST-->; top: <!--T JUST-->" class="button" onclick="window.location=\'<!--BUTTON GOTO-->\'"><!--BUTTON LABEL--></button>'
 
     workingSheet = "sub.csv"
     print('READ SHEET:' + workingSheet)
@@ -17,8 +17,8 @@ def parse():
         with open(workingSheet) as csv_sheet:
             read_csv = csv.reader(csv_sheet, delimiter=',')
             for y in read_csv:
-                horizJ = 1
-                vertJ = 5
+                horizJ = 2
+                vertJ = 1
                 if rowCount != 0:
                     fileGen = open(y[0] + ".html", 'w')
                     for x in open(workingHTML, 'r'):
@@ -57,16 +57,18 @@ def parse():
                                 #we're done with one horizontal row at a time (So only increment horizontally
                                 #when vertJ isn't even)
 
-                                if horizJ % 2 != 0:
-                                    lJust = '1em'
-                                    horizJ += 1
-                                else:
-                                    lJust = '5em'
-                                    horizJ += 1
-                                    vertJ += 2
+                                #if horizJ % 2 != 0:
+                                #    lJust = '1em'
+                                #    horizJ += 1
+                                #else:
+                                #    lJust = '5em'
+                                #    horizJ += 1
 
-                                x = x.replace('<!--L JUST-->', lJust)
-                                x = x.replace('<--T JUST-->', str(vertJ) + "em")
+                                #Or, ya know, screw it because automatically centering buttons is difficult
+                                vertJ += 4
+
+                                #x = x.replace('<!--L JUST-->', lJust)
+                                x = x.replace('<!--T JUST-->', str(vertJ) + 'em')
 
                                 i += 2
                                 l += 2
