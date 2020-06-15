@@ -5,7 +5,7 @@ from sys import exit
 
 def parse():
     button = '<button style="left: <!--L JUST-->; top: <!--T JUST-->" class="button" onclick="window.location=\'<!--BUTTON GOTO-->\'"><!--BUTTON LABEL--></button>'
-    image = 'style = \"background-image: url(<!--FILENAME-->); background-size: cover\"'
+    image = 'style = \"background-image: url(<!--FILENAME-->); background-size: cover; height: 1vh; top: 7em\"'
 
     workingSheet = "sub.csv"
     print('READ SHEET:' + workingSheet)
@@ -17,7 +17,6 @@ def parse():
         with open(workingSheet) as csv_sheet:
             read_csv = csv.reader(csv_sheet, delimiter=',')
             for y in read_csv:
-                print(y[2])
                 horizJ = 2
                 vertJ = 5
                 if rowCount != 0:
