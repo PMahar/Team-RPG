@@ -5,7 +5,7 @@ from sys import exit
 
 def parse():
     button = '<button style="left: <!--L JUST-->; top: <!--T JUST-->" class="button" onclick="window.location=\'<!--BUTTON GOTO-->\'"><!--BUTTON LABEL--></button>'
-    image = 'style = \"background-image: url(<!--FILENAME-->); background-size: cover; height: 1vh; top: 7em\"'
+    image = 'body {\nbackground-image: url(\'<!--FILENAME-->\');\n background-repeat: no-repeat;\n background-size: 100%;\n margin-bottom: 0.5em;\n}'
 
     workingSheet = "sub.csv"
     print('READ SHEET:' + workingSheet)
@@ -18,7 +18,7 @@ def parse():
             read_csv = csv.reader(csv_sheet, delimiter=',')
             for y in read_csv:
                 horizJ = 2
-                vertJ = 5
+                vertJ = 7
                 if rowCount != 0:
                     fileGen = open(y[0] + ".html", 'w')
                     for x in open(workingHTML, 'r'):
@@ -41,12 +41,12 @@ def parse():
 
                         if '<!--PROMPT SIZE HERE-->' in x:
                             if 0 < len(y[1]) < 150:
-                                subSize = "40"
-                            elif 150 < len(y[1]) < 250:
                                 subSize = "30"
+                            elif 150 < len(y[1]) < 250:
+                                subSize = "20"
                             elif 250 < len(y[1]) < 350:
-                                subSize = "25"
-                            x = x.replace('<!--PROMPT SIZE HERE-->', subSize + 'px')
+                                subSize = "15"
+                            x = x.replace('<!--PROMPT SIZE HERE-->', "font-size:" + subSize + 'px;')
 
                         if '<!--BUTTONS HERE-->' in x:
                             while l < len(y) and len(y[i]) > 0 and len(y[l]) > 0:

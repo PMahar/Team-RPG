@@ -25,7 +25,6 @@ body.game {
 
 form.code {
 	text-align: center;
-	
 }
 	
 
@@ -110,3 +109,9 @@ button.gobutton {
 	color: black;
 	border: none;
 }
+
+mark {
+	background-color: #272727;
+	color: #339F19;
+}
+
