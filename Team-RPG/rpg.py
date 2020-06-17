@@ -18,7 +18,7 @@ def parse():
             read_csv = csv.reader(csv_sheet, delimiter=',')
             for y in read_csv:
                 horizJ = 2
-                vertJ = 7
+                vertJ = 13
                 if rowCount != 0:
                     fileGen = open(y[0] + ".html", 'w')
                     for x in open(workingHTML, 'r'):
@@ -46,7 +46,18 @@ def parse():
                                 subSize = "20"
                             elif 250 < len(y[1]) < 350:
                                 subSize = "15"
-                            x = x.replace('<!--PROMPT SIZE HERE-->', "font-size:" + subSize + 'px;')
+                            #Page-specific sizes
+                            if y[0] == 'I':
+                                subSize = '20'
+                            if y[0] == 'K':
+                                subSize = '12'
+                            if y[0] == 'G' or y[0] == 'M' or y[0] == 'J':
+                                subSize = '35'
+                            if y[0] == 'S':
+                                subSize = '13'
+                            if y[0] == 'L':
+                                subSize = '15'
+                            x = x.replace('<!--PROMPT SIZE HERE-->', "font-size: " + subSize + 'px;')
 
                         if '<!--BUTTONS HERE-->' in x:
                             while l < len(y) and len(y[i]) > 0 and len(y[l]) > 0:
